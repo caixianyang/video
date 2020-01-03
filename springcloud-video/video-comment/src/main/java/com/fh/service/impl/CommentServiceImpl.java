@@ -62,10 +62,31 @@ public class CommentServiceImpl implements CommentService {
 
     /*增加回复*/
     @Override
-    public void addCommentReply(CommentReply commentReply) {
-
+    public ServerResponse addCommentReply(CommentReply commentReply) {
+        Integer userId = commentReply.getUserId();
+        Integer replyUserId = commentReply.getReplyUserId();
+        ServerResponse serverResponse = userService.queryById(userId);
+        ServerResponse serverResponse2 = userService.queryById(replyUserId);
+        if(serverResponse.getStatus() !=200){
+            return ServerResponse.error(ResponseEnum.ERROR);
+        }
+        if(serverResponse2.getStatus() !=200){
+            return ServerResponse.error(ResponseEnum.ERROR);
+        }
+        if (serverResponse.getData() == null){
+            return ServerResponse.error(ResponseEnum.USER_NULL);
+        }
+        if (serverResponse2.getData() == null){
+            return ServerResponse.error(ResponseEnum.USER_NULL);
+        }
+        Map userMassage = (Map) serverResponse.getData();
+        Map userMassage2 = (Map) serverResponse2.getData();
+        commentReply.setUserName((String) userMassage.get("userName"));
+        commentReply.setUserPicture((String) userMassage.get("userPath"));
+        commentReply.setReplyUserName((String) userMassage2.get("userName"));
         commentReply.setReplyTime(new Date());
         commentMapper.addCommentReply(commentReply);
+        return ServerResponse.success();
     }
 
     /*删除回复*/

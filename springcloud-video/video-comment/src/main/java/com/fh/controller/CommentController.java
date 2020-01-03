@@ -63,8 +63,8 @@ public class CommentController {
     /*增加回复*/
     @RequestMapping("addCommentReply")
     public ServerResponse addCommentReply(CommentReply commentReply){
-        commentService.addCommentReply(commentReply);
-        return ServerResponse.success();
+
+        return  commentService.addCommentReply(commentReply);
     }
 
     /*删除回复*/
@@ -114,6 +114,7 @@ public class CommentController {
         List<Great> greats = commentService.queryGreatById(commentId,userId);
         /*如果查询到信息证明该用户给该评论点过赞*/
         if(greats!=null && greats.size()>0){
+
             comment.setCommentLike(comment.getCommentLike()-1);
             /*给该评论赞-1*/
             commentService.updateCommentLike(comment);
@@ -122,6 +123,7 @@ public class CommentController {
         }
         /*如果查询到信息证明该用户没有给该评论点过赞*/
         if(greats.size()==0){
+            comment.setUserId(userId);
             comment.setCommentLike(comment.getCommentLike()+1);
             /*给该评论赞+1*/
             commentService.updateCommentLike(comment);

@@ -18,7 +18,7 @@ public interface CommentService {
     List<CommentReply> queryReplyByCommentId(Integer commentId);
 
     /*增加回复*/
-    void addCommentReply(CommentReply commentReply);
+    ServerResponse addCommentReply(CommentReply commentReply);
     /*删除回复*/
     void delReplyByReplyId(Integer replyId);
     /*根据评论id删除评论*/
