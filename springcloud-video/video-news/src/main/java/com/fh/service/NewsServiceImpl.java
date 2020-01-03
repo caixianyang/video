@@ -59,5 +59,20 @@ public class NewsServiceImpl implements NewsService {
         return newsMapper.initNewsStuatusList();
     }
 
+    @Override
+    public List<NewsInfo> getNewsName(Integer newsId) {
+        return newsMapper.getNewsName(newsId);
+    }
+
+    @Override
+    public List<NewsInfo> queryNewsVedioList(Integer newsId) {
+        return newsMapper.queryNewsVedioList(newsId);
+    }
+
+    @Override
+    public List<NewsInfo> newsQueryList() {
+        return newsMapper.newsQueryList();
+    }
+
 
 }

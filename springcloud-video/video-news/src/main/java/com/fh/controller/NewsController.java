@@ -15,7 +15,6 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("news")
-@CrossOrigin
 public class NewsController {
     @Autowired
     private NewsService newsService;
@@ -27,6 +26,7 @@ public class NewsController {
         newsService.clickRateAdd(news);
         return  ServerResponse.success();
     }
+
     @RequestMapping("queryNewsList")
     @ResponseBody
     public Map<String, Object> queryNewsList(NewsInfo news){
@@ -89,6 +89,32 @@ public class NewsController {
     public ServerResponse updateNews(NewsInfo news){
         newsService.updateNews(news);
         return ServerResponse.success();
-
+    }
+    /*
+    * 名称
+    * */
+    @RequestMapping("getNewsName")
+    @ResponseBody
+    public ServerResponse getNewsName(Integer newsId){
+        List<NewsInfo> list=newsService.getNewsName(newsId);
+        return ServerResponse.success(list);
+    }
+    /*
+    * 视频
+    * */
+    @RequestMapping("queryNewsVedioList")
+    @ResponseBody
+    public ServerResponse queryNewsVedioList(Integer newsId){
+        List<NewsInfo> list=newsService.queryNewsVedioList(newsId);
+        return ServerResponse.success(list);
+    }
+    /*
+    * 查询
+    * */
+    @RequestMapping("newsQueryList")
+    @ResponseBody
+    public ServerResponse newsQueryList(){
+        List<NewsInfo> list=newsService.newsQueryList();
+        return ServerResponse.success(list);
     }
 }

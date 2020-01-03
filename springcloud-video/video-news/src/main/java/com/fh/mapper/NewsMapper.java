@@ -26,4 +26,10 @@ public interface NewsMapper {
     void clickRateAdd(NewsInfo news);
 
     List<NewsInfo> initNewsStuatusList();
+
+    List<NewsInfo> getNewsName(Integer newsId);
+
+    List<NewsInfo> queryNewsVedioList(Integer newsId);
+
+    List<NewsInfo> newsQueryList();
 }

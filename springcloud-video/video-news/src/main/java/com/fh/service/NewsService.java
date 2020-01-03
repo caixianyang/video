@@ -1,5 +1,6 @@
 package com.fh.service;
 
+import com.fh.common.ServerResponse;
 import com.fh.entity.NewsInfo;
 
 import java.util.List;
@@ -23,4 +24,10 @@ public interface NewsService {
     void clickRateAdd(NewsInfo news);
 
     List<NewsInfo> initNewsStuatusList();
+
+    List<NewsInfo> getNewsName(Integer newsId);
+
+    List<NewsInfo> queryNewsVedioList(Integer newsId);
+
+    List<NewsInfo> newsQueryList();
 }

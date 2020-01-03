@@ -11,11 +11,21 @@ public class NewsInfo extends DataTable{
     private Integer movieId;//视频Id
     private String filePath;//新闻海报
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date createTime;//新闻发布时间
     private Integer newsStatus;//新闻状态如：热门
     private Integer discussId;//评论Id
     private String newsContent;//新闻内容
     private int clickRate;//点击量
+    private String newsVideo;//新闻视频
+
+    public String getNewsVideo() {
+        return newsVideo;
+    }
+
+    public void setNewsVideo(String newsVideo) {
+        this.newsVideo = newsVideo;
+    }
 
     public int getClickRate() {
         return clickRate;
