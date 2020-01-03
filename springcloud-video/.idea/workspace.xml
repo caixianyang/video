@@ -305,9 +305,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="448" />
-    <option name="y" value="497" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="447" />
+    <option name="y" value="496" />
     <option name="width" value="1400" />
     <option name="height" value="780" />
   </component>
@@ -367,7 +367,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577979055698" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/video-user-api/src/main/java/com/fh" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../1904atrain2/shop-goods" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
